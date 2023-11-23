@@ -6,7 +6,7 @@
 
     <groupId>com.amazon.deequ</groupId>
     <artifactId>deequ</artifactId>
-    <version>2.0.6-spark-3.4</version>
+    <version>2.0.6-joom-spark-3.5</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -18,7 +18,7 @@
         <artifact.scala.version>${scala.major.version}</artifact.scala.version>
         <scala-maven-plugin.version>4.8.1</scala-maven-plugin.version>
 
-        <spark.version>3.4.1</spark.version>
+        <spark.version>3.5.0</spark.version>
     </properties>
 
     <name>deequ</name>
@@ -26,6 +26,21 @@
         which measure data quality in large datasets.
     </description>
     <url>https://github.com/awslabs/deequ</url>
+
+    <repositories>
+        <repository>
+            <id>joom-maven</id>
+            <name>JFrog</name>
+            <url>https://jfrog.joom.it/artifactory/joom-maven</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>joom-maven</id>
+            <name>JFrog</name>
+            <url>https://jfrog.joom.it/artifactory/joom-maven</url>
+        </repository>
+    </distributionManagement>
 
     <licenses>
         <license>
