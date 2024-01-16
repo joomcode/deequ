@@ -36,7 +36,7 @@ case class CustomSql(expression: String) extends Analyzer[CustomSqlState, Double
   override def computeStateFrom(data: DataFrame): Option[CustomSqlState] = {
 
     Try {
-      data.sqlContext.sql(expression)
+      data.sparkSession.sql(expression)
     } match {
       case Failure(e) => Some(CustomSqlState(Right(e.getMessage)))
       case Success(dfSql) =>

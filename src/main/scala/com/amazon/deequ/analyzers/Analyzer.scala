@@ -309,7 +309,7 @@ object Preconditions {
 
   private[this] val caseSensitive = {
     SparkSession.builder().getOrCreate()
-    .sqlContext.getConf("spark.sql.caseSensitive").equalsIgnoreCase("true")
+      .conf.get("spark.sql.caseSensitive").equalsIgnoreCase("true")
   }
 
   def structField(column: String, schema: StructType): StructField = {
